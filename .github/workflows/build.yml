@@ -12,7 +12,7 @@ on:
 
 jobs:
   Build:
-    uses: Landix-Sistemas/sre-shared-repository-reusable-workflows/.github/workflows/layer-build.yml@master
+    uses: Landix-Sistemas/sre-shared-repository-reusable-workflows/.github/workflows/layer-build.yml@main
     with:
       layer_name: "shared-lambda-layer-api-sfv-arm64"
       branch_name: ${{ github.ref_name }}
@@ -23,7 +23,7 @@ jobs:
   PullRequest:
     needs: Build
     if: ${{ needs.Build.outputs.merge_to != 'n/a' && needs.Build.outputs.merge_to != '' }}
-    uses: Landix-Sistemas/sre-shared-repository-reusable-workflows/.github/workflows/create-pull-request.yml@master
+    uses: Landix-Sistemas/sre-shared-repository-reusable-workflows/.github/workflows/create-pull-request.yml@main
     secrets: inherit
     with:
       branch_name: ${{ github.ref_name }}
