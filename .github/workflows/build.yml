@@ -1,5 +1,5 @@
 # .github/workflows/deploy-dev.yml
-name: Build Layer - shared-lambda-layer-psycopg2-arm64
+name: Build Layer - shared-lambda-layer-api-sfv-arm64
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
   Build:
     uses: Landix-Sistemas/sre-shared-repository-reusable-workflows/.github/workflows/layer-build.yml@master
     with:
-      layer_name: "shared-lambda-layer-psycopg2-arm64"
+      layer_name: "shared-lambda-layer-api-sfv-arm64"
       branch_name: ${{ github.ref_name }}
       layer_type: "python" # ou nodejs para node
       runtime_version: "3.14" # ou 22.x para nodejs
